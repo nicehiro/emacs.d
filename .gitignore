@@ -1,0 +1,10 @@
+auto-save-list/
+elpa/
+quelpa/
+rime/build
+rime/luna_pinyin.userdb
+rime/luna_pinyin.sogou.dict.yaml
+rime/installation.yaml
+rime/user.yaml
+projectile-bookmarks.eld
+transient/
