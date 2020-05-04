@@ -5,6 +5,7 @@
   :ensure t
   :bind
   (("M-z" . 'ivy-resume)
+   ("C-s" . 'swiper)
    :map ivy-switch-buffer-map
    ("!" . 'ivy-switch-buffer-kill)
    :map ivy-minibuffer-map
@@ -22,11 +23,13 @@
   :init
   (setq ivy-use-virtual-buffers nil
 	    ivy-use-selectable-prompt t
-        ivy-height 15)
+	ivy-height 15)
   (ivy-mode 1))
 
 (use-package counsel
   :bind
+  ;; for better M-x, show hot key behind the command.
+  ("M-x" . 'counsel-M-x)
   ("C-x C-f" . 'counsel-find-file)
   ("<C-escape>" . 'counsel-switch-buffer)
   ("C-? C-f" . 'counsel-describe-function)
@@ -40,4 +43,4 @@
   (counsel-projectile-mode 1))
 
 (provide 'init-ivy)
-;;; init-ivy.el ends here
+;;; init-ivy.el ends here.

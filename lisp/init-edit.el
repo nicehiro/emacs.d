@@ -19,5 +19,9 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;;; useless whitespace
+(setq show-trailing-whitespace t)
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 (provide 'init-edit)
 ;;; init-evil.el ends here
