@@ -113,9 +113,9 @@
       "* %? %^g")
      ("n" "Check book" entry
       (file+headline "~/Documents/gtd/check.org" "Books")
-      "* %^{book name} by %^{author} %^g")) t)
+      "* %^{book name} by %^{author} %^g")))
  '(package-selected-packages
-   '(web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
+   '(ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
  '(rime-cursor "˰")
  '(rime-disable-predicates
    '(rime-predicate-prog-in-code-p rime-predicate-after-alphabet-char-p))

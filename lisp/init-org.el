@@ -164,9 +164,12 @@
 
 (add-hook 'org-agenda-finalize-hook #'my:org-agenda-time-grid-spacing)
 
-(use-package org-bullets)
+(use-package org-bullets
+  :ensure t
+  :custom
+  (org-bullets-mode t))
 
-(use-package org-download)
+(use-package ox-pandoc)
 
 (provide 'init-org)
 ;;; init-org.el ends here
