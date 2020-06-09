@@ -32,19 +32,24 @@
   (set-fontset-font
    (frame-parameter nil 'font)
    charset
-   (font-spec :name hiro/font
-	      :weight 'normal
+   (font-spec :name "-WQYF-WenQuanYi Micro Hei-normal-normal-normal-*-*-*-*-*-*-0-iso10646-1"
+	      :weight 'bold
 	      :slant 'normal
 	      :size 16.0)))
 ;; cntest hahahahahaha
 ;; 中文   测试测试测试测试测试
 
 ;;; Load theme.
-(progn
-  (require 'joker-theme)
-  (if hiro/dumped-load-path
-      (enable-theme 'joker)
-    (load-theme 'joker t)))
+;; (progn
+;;   (require 'joker-theme)
+;;   (if hiro/dumped-load-path
+;;       (enable-theme 'joker)
+;;     (load-theme 'joker t)))
+(use-package tron-legacy-theme
+  :config
+  (setq tron-legacy-theme-vivid-cursor t)
+  (setq tron-legacy-theme-softer-bg t)
+  (load-theme 'tron-legacy))
 
 ;;; Dark theme. It has too blight color in the night.
 (use-package srcery-theme

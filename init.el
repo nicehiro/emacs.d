@@ -76,7 +76,7 @@
  '(company-require-match nil)
  '(company-tng-configure-default nil t)
  '(custom-safe-themes
-   '("d06cf62056bc85ec1673d7a45fd4be277fc15300732540e87acd4496aa0ccc46" "922e96b74620a11b52434d551cf7115b8274dfa42b289eeec44d93378d0bf093" default))
+   '("d0aa1464d7e55d18ca1e0381627fac40229b9a24bca2a3c1db8446482ce8185e" "d06cf62056bc85ec1673d7a45fd4be277fc15300732540e87acd4496aa0ccc46" "922e96b74620a11b52434d551cf7115b8274dfa42b289eeec44d93378d0bf093" default))
  '(default-input-method "rime")
  '(global-wakatime-mode t)
  '(indent-guide-recursive t)
@@ -113,9 +113,9 @@
       "* %? %^g")
      ("n" "Check book" entry
       (file+headline "~/Documents/gtd/check.org" "Books")
-      "* %^{book name} by %^{author} %^g")))
+      "* %^{book name} by %^{author} %^g")) t)
  '(package-selected-packages
-   '(ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
+   '(nox tron-legacy-theme valign ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
  '(rime-cursor "˰")
  '(rime-disable-predicates
    '(rime-predicate-prog-in-code-p rime-predicate-after-alphabet-char-p))

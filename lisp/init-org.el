@@ -171,5 +171,11 @@
 
 (use-package ox-pandoc)
 
+(use-package valign
+  :quelpa (valign :repo "casouri/valign" :fetcher github)
+  :ensure t
+  :config
+  (valign-mode t))
+
 (provide 'init-org)
 ;;; init-org.el ends here
