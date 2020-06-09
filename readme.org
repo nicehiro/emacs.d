@@ -1,0 +1,2 @@
+* My Emacs configrations
+Most ideas and codes are come from [[https://github.com/DogLooksGood/dogEmacs][dogEmacs]].

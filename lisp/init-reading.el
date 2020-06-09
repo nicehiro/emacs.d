@@ -46,7 +46,7 @@
   :hook
   (text-mode . olivetti-mode)
   (eww-mode . olivetti-mode)
-  :custom
+  :config
   (olivetti-set-width 130))
 
 (add-hook 'eww-mode-hook 'eww-toggle-fonts)
