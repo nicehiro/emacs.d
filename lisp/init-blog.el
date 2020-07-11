@@ -29,6 +29,5 @@
 	("org"
 	 :components ("org-notes" "org-static"))))
 
-
 (provide 'init-blog)
 ;;; init-blog.el ends here

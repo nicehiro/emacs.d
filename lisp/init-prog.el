@@ -5,6 +5,9 @@
 (add-hook 'prog-mode-hook 'toggle-truncate-lines)
 ;;; display line numbers for program mode
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'set-tab-2)
+(defun set-tab-2 ()
+  (setq tab-width 2))
 
 ;;; indent guide
 (use-package indent-guide
