@@ -7,24 +7,24 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'set-tab-2)
 (defun set-tab-2 ()
-  (setq tab-width 2))
+	(setq tab-width 2))
 
 ;;; indent guide
 (use-package indent-guide
-  :hook
-  (prog-mode . indent-guide-mode)
-  :custom
-  (indent-guide-recursive t))
+	:hook
+	(prog-mode . indent-guide-mode)
+	:custom
+	(indent-guide-recursive t))
 
 ;;; flycheck
 (use-package flycheck
-  :hook
-  (prog-mode . flycheck-mode))
+	:hook
+	(prog-mode . flycheck-mode))
 
 ;; highlight brackets
 (show-paren-mode 1)
 
-(electric-pair-mode 1)
+(add-hook 'prog-mode-hook 'electric-pair-mode)
 
 (provide 'init-prog)
 ;;; init-prog.el ends here

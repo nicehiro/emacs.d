@@ -48,7 +48,7 @@
 	(require 'init-latex)
 	(require 'init-git)
 	(require 'init-translate)
-	(require 'init-wakatime)
+	;; (require 'init-wakatime)
 	(require 'init-reading)
 	(require 'init-key)
 	(require 'init-web)
@@ -66,6 +66,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(add-to-list 'auto-mode-alist t)
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(beacon-color "#c82829")
  '(company-abort-manual-when-too-short t)
  '(company-backends
    '(company-capf company-files company-css
@@ -80,10 +83,11 @@
  '(company-require-match nil)
  '(company-tng-configure-default nil t)
  '(custom-safe-themes
-   '("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "ff6c5a15591b98a58a7a68a969f7143e3e663991c31bf55ff0807f17e223af4b" "d0aa1464d7e55d18ca1e0381627fac40229b9a24bca2a3c1db8446482ce8185e" "d06cf62056bc85ec1673d7a45fd4be277fc15300732540e87acd4496aa0ccc46" "922e96b74620a11b52434d551cf7115b8274dfa42b289eeec44d93378d0bf093" default))
+   '("801a567c87755fe65d0484cb2bded31a4c5bb24fd1fe0ed11e6c02254017acb2" "d4131a682c4436bb5a61103d9a850bf788cbf793f3fd8897de520d20583aeb58" "efbd20364f292a1199d291dfaff28cc1fd89fff5b38e314bd7e40121f5c465b4" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "ff6c5a15591b98a58a7a68a969f7143e3e663991c31bf55ff0807f17e223af4b" "d0aa1464d7e55d18ca1e0381627fac40229b9a24bca2a3c1db8446482ce8185e" "d06cf62056bc85ec1673d7a45fd4be277fc15300732540e87acd4496aa0ccc46" "922e96b74620a11b52434d551cf7115b8274dfa42b289eeec44d93378d0bf093" default))
  '(debug-on-error t)
  '(default-input-method "rime")
- '(global-wakatime-mode t)
+ '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
+ '(frame-background-mode 'light)
  '(indent-guide-recursive t)
  '(load-theme 'fantom-theme t)
  '(mini-modeline-enhance-visual nil)
@@ -121,7 +125,7 @@
       (file+headline "~/Documents/gtd/check.org" "Books")
       "* %^{book name} by %^{author} %^g")) t)
  '(package-selected-packages
-   '(company-tip color-theme-sanityinc-tomorrow flycheck-ledger ledger-mode nord-theme rainbow-fart nox tron-legacy-theme valign ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
+   '(theme-changer tao-theme company-tip color-theme-sanityinc-tomorrow flycheck-ledger ledger-mode nord-theme rainbow-fart nox tron-legacy-theme valign ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
  '(rime-cursor "˰")
  '(rime-disable-predicates
    '(rime-predicate-prog-in-code-p rime-predicate-after-alphabet-char-p))
@@ -136,7 +140,8 @@
  '(wakatime-python-bin nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-markup-indent-offset 2)
- '(which-key-setup-minibuffer nil t))
+ '(which-key-setup-minibuffer nil t)
+ '(window-divider-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -4,7 +4,8 @@
 ;;; Code:
 ;;; menu bar & tool bar & scoll bar
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+(when (not (eq system-type 'darwin))
+	(menu-bar-mode -1))
 (scroll-bar-mode -1)
 
 ;;; disable splash screen
@@ -22,19 +23,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (setq hiro/font "-PfEd-Unifont-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 ;; (setq hiro/font "-????-Sarasa Mono Slab SC-normal-normal-normal-*-24-*-*-*-*-0-iso10646-1")
-(setq hiro/font "-UKWN-Share Tech Mono-normal-normal-normal-*-*-*-*-*-d-0-iso10646-1")
+(setq hiro/font "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+(setq hiro/font-bopomofo "-*-Libian SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
 (set-face-attribute
  'default nil
  :font (font-spec :name hiro/font
-			:size 18.0))
+									:size 16.0))
+
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font
 	 (frame-parameter nil 'font)
 	 charset
-	 (font-spec :name "-WQYF-WenQuanYi Micro Hei-normal-normal-normal-*-*-*-*-*-*-0-iso10646-1"
-				:weight 'bold
-				:slant 'normal
-				:size 12.0)))
+	 (font-spec :name hiro/font-bopomofo
+							:weight 'bold
+							:slant 'normal
+							:size 18.0)))
+
 ;; cntest hahahahahaha
 ;; 中文   测试测试测试测试测试
 
@@ -64,7 +68,14 @@
 
 (use-package color-theme-sanityinc-tomorrow
 	:config
-	(load-theme 'sanityinc-tomorrow-night))
+	;; (load-theme 'sanityinc-tomorrow-night)
+	)
+
+(use-package tao-theme
+	:config
+	(setq tao-theme-use-boxes nil)
+	;; (load-theme 'tao-yang)
+	)
 
 ;;; Title bar settings.
 (setq-default frame-title-format
@@ -139,6 +150,11 @@
 
 ;; Only show window divider when there's more than one window.
 (add-hook 'window-configuration-change-hook #'hiro/toggle-window-divider-and-border)
+
+(use-package theme-changer
+	:quelpa (theme-changer :repo "hadronzoo/theme-changer" :fetcher github)
+	:custom
+	(change-theme nil 'srcery))
 
 (provide 'init-looks)
 ;;; init-looks.el ends here

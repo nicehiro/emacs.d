@@ -44,11 +44,5 @@
 	(company-global-modes '(not dired-mode dired-sidebar-mode))
 	)
 
-(use-package company-tip
-	:quelpa (company-tip :fetcher github :repo "liushihao456/company-tip")
-	:after company
-	:config
-	(company-tip-mode t))
-
 (provide 'init-company)
 ;;; init-company.el ends here
