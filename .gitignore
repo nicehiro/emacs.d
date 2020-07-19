@@ -8,3 +8,6 @@ rime/installation.yaml
 rime/user.yaml
 projectile-bookmarks.eld
 transient/
+eshell/
+nox/
+.DS_Store
