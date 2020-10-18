@@ -1,4 +1,8 @@
 ;;; -*- lexical-binding: t -*-
+
+(use-package pangu-spacing)
+(global-pangu-spacing-mode 1)
+
 ;;; Org mode configration.
 (use-package org
 	:bind
@@ -14,6 +18,7 @@
 	(org-mode . toggle-word-wrap)
 	(org-agenda-mode . hl-line-mode)
 	(org-mode . (lambda () (org-bullets-mode 1)))
+	(org-mode . (lambda () (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)))
 	:commands
 	(org-mode)
 	:custom
@@ -170,12 +175,6 @@
 	(org-bullets-mode t))
 
 (use-package ox-pandoc)
-
-(use-package valign
-	:quelpa (valign :repo "casouri/valign" :fetcher github)
-	:ensure t
-	:config
-	(valign-mode t))
 
 (require 'org-tempo)
 

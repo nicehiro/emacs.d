@@ -23,12 +23,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (setq hiro/font "-PfEd-Unifont-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 ;; (setq hiro/font "-????-Sarasa Mono Slab SC-normal-normal-normal-*-24-*-*-*-*-0-iso10646-1")
-(setq hiro/font "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+;; (setq hiro/font "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 (setq hiro/font-bopomofo "-*-Libian SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
+(setq hiro/font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 (set-face-attribute
  'default nil
  :font (font-spec :name hiro/font
-									:size 16.0))
+									:size 20.0))
 
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font
@@ -37,17 +38,26 @@
 	 (font-spec :name hiro/font-bopomofo
 							:weight 'bold
 							:slant 'normal
-							:size 18.0)))
+							:size 24.0)))
 
 ;; cntest hahahahahaha
 ;; 中文   测试测试测试测试测试
 
 ;;; Load theme.
-;; (progn
-;;   (require 'joker-theme)
-;;   (if hiro/dumped-load-path
-;;       (enable-theme 'joker)
-;;     (load-theme 'joker t)))
+(progn
+	(require 'joker-theme)
+	(if hiro/dumped-load-path
+			(enable-theme 'joker)
+		;; (load-theme 'joker t))
+	)
+
+(progn
+	(require 'elegant-light-theme)
+	(if hiro/dumped-load-path
+			(enable-theme 'elegant-light-theme)
+		(load-theme 'elegant-emacs-light t))
+	)
+
 (use-package tron-legacy-theme
 	:config
 	(setq tron-legacy-theme-vivid-cursor t)
@@ -76,6 +86,8 @@
 	(setq tao-theme-use-boxes nil)
 	;; (load-theme 'tao-yang)
 	)
+
+(use-package solarized-theme)
 
 ;;; Title bar settings.
 (setq-default frame-title-format
@@ -154,7 +166,11 @@
 (use-package theme-changer
 	:quelpa (theme-changer :repo "hadronzoo/theme-changer" :fetcher github)
 	:custom
-	(change-theme nil 'srcery))
+	(calendar-latitude 300.21)
+	(calendar-longitude 120.20)
+	)
+
+;; (change-theme 'solarized-light 'solarized-dark)
 
 (provide 'init-looks)
 ;;; init-looks.el ends here

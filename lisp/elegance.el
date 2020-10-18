@@ -32,33 +32,17 @@
 
 
 ;; Font and frame size
-(set-face-font 'default "Fira Code 18")
+(set-face-font 'default "Sarasa Mono Slab SC 18")
 (setq default-frame-alist
 			(append (list '(width  . 80) '(height . 40)
 										'(vertical-scroll-bars . nil)
 										'(internal-border-width . 24)
-										'(font . "Roboto Mono Light 18"))))
+										'(font . "Sarasa Mono Slab SC 18"))))
 (set-frame-parameter (selected-frame)
 										 'internal-border-width 24)
-(setq hiro/font-bopomofo "-*-Libian SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
-(setq hiro/font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-;; (setq hiro/font "-*-Times New Roman-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
-;; (setq hiro/font "-*-Menlo-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-(set-face-attribute
- 'default nil
- :font (font-spec :name hiro/font
-									:size 18.0))
 
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-	(set-fontset-font
-	 (frame-parameter nil 'font)
-	 charset
-	 (font-spec :name hiro/font-bopomofo
-							:weight 'bold
-							:slant 'normal
-							:size 20.0)))
-;; TestTestTest
-;; 中文测试测试
+;; TextText
+;; 中文字体
 
 ;; Use variable width font faces in current buffer
 (defun reading-english-face ()
@@ -69,7 +53,7 @@
 (add-hook 'nov-mode-hook 'reading-english-face)
 
 ;; Line spacing, can be 0 for code and 1 or 2 for text
-(setq-default line-spacing 0)
+(setq-default line-spacing 2)
 
 ;; Underline line at descent position, not baseline position
 (setq x-underline-at-descent-line t)

@@ -9,7 +9,7 @@
 
 ;;; Default mac keybindings.
 (when (eq system-type 'darwin)
-	(setq mac-option-modifier nil
+	(setq mac-option-modifier 'meta
 				ns-function-modifier 'super
 				mac-right-command-modifier 'hyper
 				mac-right-option-modifier 'alt

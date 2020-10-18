@@ -5,7 +5,7 @@
 (custom-theme-set-faces
  'joker
  '(default                        ((t (:background "#211F23"  :foreground "#A8A8A8"))))
- '(mc/cursor-face                 ((t (:background "#949494" :foreground "black"))))
+ '(mc/cursor-face                 ((t (:background "#2E8B57" :foreground "#2E8B57"))))
  '(region                         ((t (:background "#173525"))))
  '(highlight-symbol-face          ((t ())))
  `(hl-line                        ((t (:background "#272727"))))
@@ -16,10 +16,10 @@
  '(show-paren-match               ((t (:underline "#00AF5F"))))
  '(company-tooltip-common         ((t (:inherit font-lock-comment-face))))
  '(company-tooltip-common-selection ((t (:inherit font-lock-constant-face
-                                                  :inverse-video t))))
+																									:inverse-video t))))
  '(company-tooltip                ((t (:background "#333333"))))
  '(company-tooltip-selection      ((t (:inherit font-lock-constant-face
-                                                :inverse-video t))))
+																								:inverse-video t))))
  '(company-scrollbar-bg           ((t (:background "#303030"))))
  '(company-scrollbar-fg           ((t (:background "#4E4E4E"))))
  '(font-lock-comment-face         ((t (:foreground "#00BBBB"))))
@@ -95,9 +95,9 @@
  '(tooltip                        ((t (:family "unifont")))))
 
 (and load-file-name
-     (boundp 'custom-theme-load-path)
-     (add-to-list 'custom-theme-load-path
-                  (file-name-as-directory
-                   (file-name-directory load-file-name))))
+		 (boundp 'custom-theme-load-path)
+		 (add-to-list 'custom-theme-load-path
+									(file-name-as-directory
+									 (file-name-directory load-file-name))))
 
 (provide-theme 'joker)

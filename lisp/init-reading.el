@@ -1,10 +1,8 @@
 ;;; -*- lexical binding: t -*-
 ;;; Better reading experience for eww, dash-docs, nov, mu4e.
 ;;; epub books
-(use-package nov
-	:custom
-	(nov-text-width 80)
-	(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+(use-package nov)
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 (defun hiro/nov-font-setup ()
 	"Novel font setting."
@@ -32,23 +30,6 @@
 		(with-eval-after-load 'eww
 			(advice-add 'eww-display-html :around
 			'eww-display-html--override-shr-external-rendering-functions))))
-
-(defun hiro/set-margins ()
-	"Set margins for window display."
-	(setq left-margin-width 10)
-	(setq right-margin-width 10))
-
-;; (add-hook 'text-mode-hook 'hiro/set-margins)
-;; (add-hook 'eww-mode-hook 'hiro/set-margins)
-;; (add-hook 'eww-mode-hook 'eww-toggle-fonts)
-
-(use-package olivetti
-	:hook
-	(text-mode . olivetti-mode)
-	(eww-mode . olivetti-mode)
-	(info-mode . olivetti-mode)
-	:config
-	(olivetti-set-width 130))
 
 (add-hook 'eww-mode-hook 'eww-toggle-fonts)
 
