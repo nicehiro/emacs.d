@@ -14,55 +14,23 @@
 (set-frame-parameter nil 'alpha '(100 . 100))
 
 ;;; English & Chinese font setting
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Sarasa Mono font code: "-????-Sarasa Mono SC-semibold-italic-normal-*-*-*-*-*-0-0-iso10646-1" ;;
-;; English Sarasa Mono SC 18.0 == Chinese Sarasa Mono SC 16.0					 ;;
-;;												 ;;
-;; Unifont "-PfEd-Unifont-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"			 ;;
-;; English Unifont 18.0 == Chinese Unifont 16.0							 ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (setq hiro/font "-PfEd-Unifont-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-;; (setq hiro/font "-????-Sarasa Mono Slab SC-normal-normal-normal-*-24-*-*-*-*-0-iso10646-1")
-;; (setq hiro/font "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-(setq hiro/font-bopomofo "-*-Libian SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
-(setq hiro/font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+(setq hiro/font "-*-Sarasa Mono SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
 (set-face-attribute
  'default nil
  :font (font-spec :name hiro/font
 									:size 20.0))
-
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-	(set-fontset-font
-	 (frame-parameter nil 'font)
-	 charset
-	 (font-spec :name hiro/font-bopomofo
-							:weight 'bold
-							:slant 'normal
-							:size 24.0)))
-
-;; cntest hahahahahaha
-;; 中文   测试测试测试测试测试
 
 ;;; Load theme.
 (progn
 	(require 'joker-theme)
 	(if hiro/dumped-load-path
 			(enable-theme 'joker)
-		;; (load-theme 'joker t))
-	)
-
-(progn
-	(require 'elegant-light-theme)
-	(if hiro/dumped-load-path
-			(enable-theme 'elegant-light-theme)
-		(load-theme 'elegant-emacs-light t))
-	)
+	))
 
 (use-package tron-legacy-theme
 	:config
 	(setq tron-legacy-theme-vivid-cursor t)
 	(setq tron-legacy-theme-softer-bg t)
-	;; (load-theme 'tron-legacy)
 	)
 
 (use-package nord-theme
@@ -70,24 +38,26 @@
 	(setq nord-comment-brightness 15)
 	)
 
-;;; Dark theme. It has too blight color in the night.
-(use-package srcery-theme
-	:ensure t
-	:custom
-	(srcery-org-height . nil))
-
 (use-package color-theme-sanityinc-tomorrow
 	:config
-	;; (load-theme 'sanityinc-tomorrow-night)
 	)
 
 (use-package tao-theme
 	:config
 	(setq tao-theme-use-boxes nil)
-	;; (load-theme 'tao-yang)
 	)
 
 (use-package solarized-theme)
+
+(use-package foggy-night-theme
+	:quelpa (foggy-night-theme :repo "mswift42/foggy-night-theme"
+														 :fetcher github))
+
+;; (load-theme 'foggy-night t))
+(add-to-list 'load-path "~/Projects/hiro-themes/")
+(require 'hiro-emacs-light-theme)
+(require 'hiro-emacs-dark-theme)
+(load-theme 'hiro-emacs-dark t)
 
 ;;; Title bar settings.
 (setq-default frame-title-format
@@ -127,50 +97,20 @@
 						 " "
 						 (:eval (mini-modeline-msg))))
 
-(defface mini-modeline-mode-line
-	'((((background light))
-		 :background "#55ced1" :height 0.1 :box nil)
-		(t
-		 :background "#008b8b" :height 0.1 :box nil))
-	"Modeline face for active window."
-	:group 'mini-modeline)
+;; (defface mini-modeline-mode-line
+;;	'((((background light))
+;;		 :background "#55ced1" :height 0.1 :box nil)
+;;		(t
+;; )))
 
-(defface mini-modeline-mode-line-inactive
-	'((((background light))
-		 :background "#dddddd" :height 0.1 :box nil)
-		(t
-		 :background "#333333" :height 0.1 :box nil))
-	"Modeline face for inactive window."
-	:group 'mini-modeline)
+(mini-modeline-mode t)
 
-(use-package mini-modeline
-	:quelpa (mini-modeline :repo "kiennq/emacs-mini-modeline" :fetcher github)
-	:ensure t
-	:custom
-	(mini-modeline-enhance-visual nil)
-	(mini-modelineecho-duration 2)
-	(mini-modeline-mode t))
-
-(defun hiro/toggle-window-divider-and-border ()
-	"Toggle window divider and border."
-	(unless (string-match-p ".*-posframe\\*" (buffer-name (current-buffer)))
-		(if (> (count-windows) 1)
-	(progn
-		(window-divider-mode 1))
-			(progn
-	(window-divider-mode -1)))))
-
-;; Only show window divider when there's more than one window.
-(add-hook 'window-configuration-change-hook #'hiro/toggle-window-divider-and-border)
-
-(use-package theme-changer
-	:quelpa (theme-changer :repo "hadronzoo/theme-changer" :fetcher github)
-	:custom
-	(calendar-latitude 300.21)
-	(calendar-longitude 120.20)
+;;; Rainbow-mode for display current color code
+(use-package rainbow-mode
+	:hook
+	((prog-mode . rainbow-mode)
+	 (text-mode . rainbow-mode))
 	)
-
-;; (change-theme 'solarized-light 'solarized-dark)
 
 (provide 'init-looks)
 ;;; init-looks.el ends here

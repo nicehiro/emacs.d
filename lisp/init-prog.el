@@ -1,6 +1,7 @@
 ;;; -*- lexical binding: t -*-
 ;;; Common configuration of program mode.
 
+(show-paren-mode t)
 ;;; toggle truncate lines for program mode
 (add-hook 'prog-mode-hook 'toggle-truncate-lines)
 ;;; display line numbers for program mode

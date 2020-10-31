@@ -11,3 +11,9 @@ transient/
 eshell/
 nox/
 .DS_Store
+*#
+*~
+recentf
+nov-places
+librime/
+bookmarks

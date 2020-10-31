@@ -1,16 +1,16 @@
 ;;; evil configration. -*- lexical binding:t -*-
 ;;; Code:
 (use-package evil
-	:commands evil-mode
+	:ensure t
 	:init
-	(add-hook 'prog-mode-hook #'evil-mode)
-	(add-hook 'text-mode-hook #'evil-mode))
+	(setq evil-vsplit-window-right t)
+	(setq evil-split-window-below t)
+	:hook
+	((prog-mode . evil-mode))
+	)
 
 (use-package evil-surround
-	:commands evil-surround-mode
-	:init
-	(add-hook 'prog-mode-hook #'evil-surround-mode)
-	(add-hook 'text-mode-hook #'evil-surround-mode))
+	)
 
 ;;; store all backup and autosave files in the tmp dir
 ;;; copied from https://emacsredux.com/blog/2013/05/09/keep-backup-and-auto-save-files-out-of-the-way/

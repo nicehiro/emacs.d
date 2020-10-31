@@ -44,5 +44,23 @@
 	(company-global-modes '(not dired-mode dired-sidebar-mode))
 	)
 
+(set-face-attribute 'company-tooltip nil
+										:background "#525252"
+										:foreground "#8ac6d1")
+
+(set-face-attribute 'company-tooltip-selection nil
+										:foreground "#a39391")
+
+(set-face-attribute 'company-scrollbar-bg nil
+										:background "#525252")
+
+(set-face-attribute 'company-tooltip-common nil
+										:foreground "#e79686")
+
+(set-face-attribute 'company-scrollbar-fg nil
+										:foreground "#e79686")
+
+(set-face-attribute 'company-preview-common nil)
+
 (provide 'init-company)
 ;;; init-company.el ends here
