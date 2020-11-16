@@ -60,7 +60,7 @@
 (set-face-attribute 'company-scrollbar-fg nil
 										:foreground "#e79686")
 
-(set-face-attribute 'company-preview-common nil)
+
 
 (provide 'init-company)
 ;;; init-company.el ends here

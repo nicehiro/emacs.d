@@ -1,4 +1,7 @@
 (use-package org-roam
+	:quelpa
+	(org-roam :repo "org-roam/org-roam"
+						:fetcher github)
 	:hook
 	(('after-init-hook 'org-roam-mode))
 	:bind
@@ -18,15 +21,21 @@
 					 :file-name "%<%Y%m%d%H%M%S>-${slug}"
 					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags:\n\n")
 					("t" "Term" plain (function org-roam-capture--get-point)
-					 "- Filed: %^{Where the term belong}\n- Description:"
+					 "* Description:"
 					 :file-name "%<%Y%m%d%H%M%S>-${slug}"
-					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags: \n\n"
+					 :head "#+title: ${title}\n#+filed: \n#+OPTIONS: toc:nil\n#+roam_alias:\n#+roam_tags: \n\n"
 					 :unnarrowed t)
 					("p" "Paper Note" plain (function org-roam-capture--get-point)
 					 "* Related Works\n\n%?\n* Views\n\n* Methods\n\n* Experiments\n\n* Conclusion\n"
 					 :file-name "%<%Y%m%d%H%M%S>-${slug}"
 					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags: \n\n"
 					 :unnarrowed t
+					 )
+					("T" "Translated Post" plain (function org-roam-capture--get-point)
+					 "#+begin_quote\n\n#+end_quote\n"
+					 :file-name  "%<%Y%m%d%H%M%S>-${slug}"
+					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags: \n\n"
+					 :unnarrwoed t
 					 )
 					))
 	(setq org-roam-capture-immediate-template
@@ -38,11 +47,18 @@
 	)
 
 (use-package org-roam-server
+	:quelpa
+	(org-roam-server :repo "org-roam/org-roam-server"
+									 :fetcher github)
 	:config
 	(setq org-roam-server-host "127.0.0.1"
 				org-roam-server-port 9090
 				org-roam-server-export-inline-images t
 				org-roam-server-authenticate nil
+				org-roam-server-serve-files nil
+				org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+				org-roam-server-network-poll t
+				org-roam-server-network-arrows nil
 				org-roam-server-network-label-truncate t
 				org-roam-server-network-label-truncate-length 60
 				org-roam-server-network-label-wrap-length 20

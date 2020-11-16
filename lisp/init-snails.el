@@ -8,6 +8,8 @@
 (add-to-list 'load-path "~/.emacs.d/quelpa/build/snails")
 (require 'snails)
 (evil-set-initial-state 'snails-mode 'emacs)
+(evil-global-set-key 'normal
+										 (kbd "SPC") 'snails)
 
 (set-face-attribute 'snails-content-buffer-face nil
 										:weight 'regular

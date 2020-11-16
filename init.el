@@ -59,6 +59,9 @@
 	(require 'init-snails)
 	(require 'init-roam)
 	(require 'init-looks)
+	(require 'init-shell)
+	(require 'init-lsp)
+	(require 'for-better-experience)
 	;; (require 'elegant-emacs-common)
 	;; (require 'elegance)
 	)
@@ -159,7 +162,7 @@
 			(file+headline "~/Documents/gtd/check.org" "Books")
 			"* %^{book name} by %^{author} %^g")))
  '(package-selected-packages
-	 '(org-roam-protocol org-roam-server rainbow-mode foggy-night-theme exec-path-from-shell snails org-roam pangu-spacing js2-refactor xref-js2 cdlatex tex auctex kana solarized-theme theme-changer tao-theme company-tip color-theme-sanityinc-tomorrow flycheck-ledger ledger-mode nord-theme rainbow-fart nox tron-legacy-theme valign ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
+	 '(yasnippet-snippets all-the-icons awesome-tab ace-window pyvenv format-all aweshell org-special-blocks elisp-docstring-server org-roam-protocol org-roam-server rainbow-mode foggy-night-theme exec-path-from-shell snails org-roam pangu-spacing js2-refactor xref-js2 cdlatex tex auctex kana solarized-theme theme-changer tao-theme company-tip color-theme-sanityinc-tomorrow flycheck-ledger ledger-mode nord-theme rainbow-fart nox tron-legacy-theme valign ox-pandoc jupyter emacs-jupyter web-mode js2-mode emmet-mode yasnippet srcery-theme srcery screry-theme fantom-theme which-key magic-latex-buffer olivetti shr-tag-pre-highlight nov org-bullets shrface flycheck indent-guide eglot youdao-dictionary rime evil-surround evil mini-modeline company use-package quelpa-use-package))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(rime-cursor "˰")

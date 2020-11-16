@@ -7,6 +7,20 @@
 	(setq evil-split-window-below t)
 	:hook
 	((prog-mode . evil-mode))
+	:bind
+	((:map evil-normal-state-map
+				 ("s-1" . awesome-tab-select-visible-tab)
+				 ("s-2" . awesome-tab-select-visible-tab)
+				 ("s-3" . awesome-tab-select-visible-tab)
+				 ("s-4" . awesome-tab-select-visible-tab)
+				 ("s-5" . awesome-tab-select-visible-tab)
+				 ("s-6" . awesome-tab-select-visible-tab)
+				 ("s-7" . awesome-tab-select-visible-tab)
+				 ("s-8" . awesome-tab-select-visible-tab)
+				 ("s-9" . awesome-tab-select-visible-tab)
+				 ))
+	:config
+	(setq ns-option-modifier 'super)
 	)
 
 (use-package evil-surround
@@ -24,4 +38,4 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 (provide 'init-edit)
-;;; init-evil.el ends here
+;;; init-edit.el ends here

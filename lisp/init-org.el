@@ -178,5 +178,11 @@
 
 (require 'org-tempo)
 
+(add-hook 'org-mode-hook
+					(lambda () (setq line-spacing 0.2)))
+
+(setq org-startup-with-inline-images t)
+(setq org-image-actual-width nil)
+
 (provide 'init-org)
 ;;; init-org.el ends here

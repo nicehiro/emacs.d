@@ -14,11 +14,25 @@
 (set-frame-parameter nil 'alpha '(100 . 100))
 
 ;;; English & Chinese font setting
-(setq hiro/font "-*-Sarasa Mono SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
+(setq hiro/font "-*-Hack-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
+(setq hiro/chinese-font "-*-PingFang SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1")
 (set-face-attribute
  'default nil
  :font (font-spec :name hiro/font
-									:size 20.0))
+									:weight 'normal
+									:slant 'normal
+									:size 14.0))
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font
+	 (frame-parameter nil 'font)
+	 charset
+	 (font-spec :name hiro/chinese-font
+							:weight 'normal
+							:slant 'normal
+							:size 14.0)))
+
+;; 中文
+;; Test
 
 ;;; Load theme.
 (progn
@@ -111,6 +125,12 @@
 	((prog-mode . rainbow-mode)
 	 (text-mode . rainbow-mode))
 	)
+
+;; posframe customization
+(setq posframe-arghandler #'hiro-posframe-arghandler)
+(defun hiro-posframe-arghandler (buffer-or-name arg-name value)
+	(let ((info '(:internal-border-width 10 :background-color "#333030")))
+		(or (plist-get info arg-name) value)))
 
 (provide 'init-looks)
 ;;; init-looks.el ends here

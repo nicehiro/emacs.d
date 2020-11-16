@@ -10,7 +10,7 @@
 	"xelatex -interaction nonstopmode -output-directory %o %f"))
 
 ;;; org mode latex export setting
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
 
 (use-package cdlatex
 	:hook
