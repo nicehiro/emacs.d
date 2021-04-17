@@ -11,7 +11,8 @@
 (when (eq system-type 'darwin)
 	(setq mac-option-modifier 'meta
 				ns-function-modifier 'super
-				mac-right-command-modifier 'hyper
+				ns-option-modifier 'super
+				mac-right-command-modifier 'meta
 				mac-right-option-modifier 'alt
 				mac-command-modifier 'meta))
 

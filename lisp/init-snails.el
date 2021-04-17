@@ -11,9 +11,5 @@
 (evil-global-set-key 'normal
 										 (kbd "SPC") 'snails)
 
-(set-face-attribute 'snails-content-buffer-face nil
-										:weight 'regular
-										:height 200)
-
 (provide 'init-snails)
 ;;; init-snails.el ends here

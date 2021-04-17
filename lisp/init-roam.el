@@ -13,7 +13,7 @@
 				(("C-c n i" . org-roam-insert))
 				(("C-c n I" . org-roam-insert-immediate)))
 	:config
-	(setq org-roam-directory "~/org-roam")
+	(setq org-roam-directory "~/Documents/roam/org-roam/")
 	(setq org-roam-capture-templates
 				'(
 					("d" "default" plain (function org-roam-capture--get-point)
@@ -37,15 +37,22 @@
 					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags: \n\n"
 					 :unnarrwoed t
 					 )
+					("A" "Algorithm" plain (function org-roam-capture--get-point)
+					 "* Algorithm\n\n* Implements\n"
+					 :file-name "%<%Y%m%d%H%M%S>-${slug}"
+					 :head "#+title: ${title}\n#+roam_alias:\n#+roam_tags: \n\n"
+					 :unnarrowed t
+					 )
 					))
 	(setq org-roam-capture-immediate-template
-			'("d" "default" plain (function org-roam-capture--get-point)
-				"%?"
-				:file-name "%<%Y%m%d%H%M%S>-${slug}"
-				:head "#+title: ${title}\n"
-				:unnarrowed t))
+				'("d" "default" plain (function org-roam-capture--get-point)
+					"%?"
+					:file-name "%<%Y%m%d%H%M%S>-${slug}"
+					:head "#+title: ${title}\n"
+					:unnarrowed t))
 	)
 
+;; use logseq for render graph and view, presentation.
 (use-package org-roam-server
 	:quelpa
 	(org-roam-server :repo "org-roam/org-roam-server"
@@ -63,7 +70,7 @@
 				org-roam-server-network-label-truncate-length 60
 				org-roam-server-network-label-wrap-length 20
 				)
-	(org-roam-server-mode)
+	;; (org-roam-server-mode)
 	(require 'org-roam-protocol)
 	)
 
@@ -75,6 +82,16 @@
 						#'my-org-protocol-focus-advice)
 (advice-add 'org-roam-protocol-open-file :around
 						#'my-org-protocol-focus-advice)
+
+;;; org note for media
+(use-package pretty-hydra)
+(use-package mpv)
+(use-package org-media-note
+	:quelpa (org-media-note :fetcher github :repo "yuchen-lea/org-media-note")
+	:hook (org-mode .  org-media-note-mode)
+	:bind (("H-v" . org-media-note-hydra/body))  ;; Main entrance
+	:config
+	(setq org-media-note-screenshot-image-dir "~/org-roam/img/"))
 
 (provide 'init-roam)
 ;;; init-roam.el ends here

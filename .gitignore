@@ -17,3 +17,14 @@ recentf
 nov-places
 librime/
 bookmarks
+.cache/
+.dap*
+.lsp*
+.org*
+eln-cache/
+evil.xbm
+*.elc
+*.db
+request/
+url/
+var/

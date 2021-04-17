@@ -23,7 +23,13 @@
 	 (rime-cursor "˰")
 	 (rime-librime-root "~/.emacs.d/librime/dist")
 	 (rime-show-candidate 'posframe)
-	 (rime-posframe-style 'vertical)))
+	 (rime-posframe-style 'vertical)
+	 (rime-posframe-properties (list :background-color (frame-parameter nil 'background-color)
+																	 :foreground-color (frame-parameter nil 'foreground-color)))
+	 (rime-disable-predicates '(rime-predicate-evil-mode-p
+															rime-predicate-after-alphabet-char-p
+															rime-predicate-prog-in-code-p))
+	 ))
 
 (provide 'init-rime)
 ;;; init-rime.el ends here

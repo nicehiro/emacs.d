@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: figure
+# key: fig_
+# --
+#+caption: ${1:caption}
+#+attr_latex: ${2:scale=0.75}
+#+attr_html: ${3::width 400}
+#+attr_org: ${4::width 400}
+#+label: fig:${5::label}$0

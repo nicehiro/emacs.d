@@ -42,17 +42,5 @@
 	:init
 	(counsel-projectile-mode 1))
 
-(set-face-attribute 'ivy-minibuffer-match-face-1 nil
-										:background "#333030")
-
-(set-face-attribute 'ivy-minibuffer-match-face-2 nil
-										:background "#1a464d")
-
-(set-face-attribute 'ivy-minibuffer-match-face-3 nil
-										:background "#1a464d")
-
-(set-face-attribute 'ivy-minibuffer-match-face-4 nil
-										:background "#1a464d")
-
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

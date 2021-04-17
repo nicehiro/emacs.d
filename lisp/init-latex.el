@@ -3,39 +3,53 @@
 (setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
 
-;; Use XeLaTeX to export PDF in Org-mode
-(setq org-latex-pdf-process
-			'("xelatex -interaction nonstopmode -output-directory %o %f"
-	"xelatex -interaction nonstopmode -output-directory %o %f"
-	"xelatex -interaction nonstopmode -output-directory %o %f"))
-
 ;;; org mode latex export setting
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
 
-(use-package cdlatex
-	:hook
-	(turn-on-cdlatex . LaTeX-mode))
 
-(use-package tex-site
+;;; auctex support in emacs
+;;; for some reason, you cannot use auctex to install directly
+;;; https://github.com/jwiegley/use-package/issues/379
+(use-package tex
+	:defer t
 	:ensure auctex
-	:mode ("\\.tex\\'" . latex-mode)
 	:config
-	(setq TeX-engine 'xetex)
+	;; Make parse file right
 	(setq TeX-auto-save t)
-	(setq TeX-parse-self t))
+	(setq TeX-parse-self t)
+	(setq-default TeX-master nil)
+	;; change tex engine to xetex
+	(setq TeX-engine 'xetex)
+	)
 
-(add-hook 'LaTeX-mode-hook
-						(lambda ()
-							;; (rainbow-delimiters-mode)
-							(company-mode)
-							;; (smartparens-mode)
-							(turn-on-reftex)
-							(setq reftex-plug-into-AUCTeX t)
-							(reftex-isearch-minor-mode)
-							(setq TeX-PDF-mode t)
-							(display-line-numbers-mode)
-							(setq TeX-source-correlate-method 'synctex)
-							(setq TeX-source-correlate-start-server t)))
+(use-package auctex-latexmk
+	:ensure t
+	:config
+	(auctex-latexmk-setup)
+	(setq auctex-latexmk-inherit-TeX-PDF-mode t))
+
+;; managing cross references, bibliographies, indices, document navigation
+(use-package reftex
+	:ensure t
+	:defer t
+	:config
+	(setq reftex-cite-prompt-optional-args t))
+
+(use-package auto-dictionary
+	:ensure t
+	:init
+	(add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1))))
+
+(use-package company-auctex
+	:ensure t
+	:init
+	(company-auctex-init))
+
+
+
+(add-hook 'TeX-mode-hook 'flyspell-mode)
+(add-hook 'TeX-mode-hook (lambda () (TeX-fold-mode 1)))
+(add-hook 'TeX-mode-hook 'LaTeX-math-mode)
 
 ;;; Magic latex buffer
 (use-package magic-latex-buffer

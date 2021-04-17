@@ -38,8 +38,8 @@
 
 ;; 打开html文件自动开启js补全
 (add-hook 'web-mode-hook (lambda ()
-				 (company-mode)
-				 ))
+													 (company-mode)
+													 ))
 
 (provide 'init-web)
 ;;; init-web.el ends here
