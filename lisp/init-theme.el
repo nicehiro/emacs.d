@@ -39,8 +39,11 @@
 	:quelpa (auto-dark-emacs :repo "nicehiro/auto-dark-emacs"
 													 :fetcher github)
 	:config
-	(setq auto-dark-emacs/dark-theme 'nimbus)
-	(setq auto-dark-emacs/light-theme 'chili-light))
+	(setq auto-dark-emacs/dark-theme 'chili-dark)
+	(setq auto-dark-emacs/light-theme 'chili-light)
+	(run-with-timer 0 auto-dark-emacs/polling-interval-seconds
+									'auto-dark-emacs/check-and-set-dark-mode)
+	)
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

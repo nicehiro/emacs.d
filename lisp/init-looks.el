@@ -12,15 +12,12 @@
 ;; (toggle-frame-maximized)
 
 ;;; emacs frame margin
-(let ((margin 4))
+(let ((margin 0))
 	(add-to-list 'default-frame-alist (cons 'internal-border-width margin))
 	(set-frame-parameter nil 'internal-border-width margin))
 
 ;;; disable splash screen
 (setq initial-buffer-choice t)
-
-;;; no opacity
-(set-frame-parameter nil 'alpha '(100 . 100))
 
 
 ;; English & Chinese font setting
@@ -28,10 +25,10 @@
 ;; Test ffff
 (set-face-attribute
  'default nil
- :font (font-spec :name  "-*-Victor Mono-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1"
-									:weight 'semibold
+ :font (font-spec :name  "-*-Hack-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1"
+									:weight 'normal
 									:slant 'normal
-									:size 18.0))
+									:size 16.0))
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font
 	 (frame-parameter nil 'font)
@@ -39,11 +36,11 @@
 	 (font-spec :name  "-*-PingFang SC-normal-normal-normal-*-*-*-*-*-p-0-iso10646-1"
 							:weight 'normal
 							:slant 'normal
-							:size 18.0)))
+							:size 16.0)))
 
 ;;; Title bar settings.
 (setq-default frame-title-format
-							'(" %b%* %e <%m>"))
+							'(" %b%* %e"))
 
 ;;; Rainbow-mode for display current color code
 (use-package rainbow-mode

@@ -6,6 +6,7 @@
 (add-hook 'prog-mode-hook 'toggle-truncate-lines)
 ;;; display line numbers for program mode
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'prog-mode-hook (lambda () (setq tab-width 2)))
 
 ;; (add-hook 'prog-mode-hook

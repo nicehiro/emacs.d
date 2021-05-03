@@ -28,7 +28,11 @@
 																	 :foreground-color (frame-parameter nil 'foreground-color)))
 	 (rime-disable-predicates '(rime-predicate-evil-mode-p
 															rime-predicate-after-alphabet-char-p
-															rime-predicate-prog-in-code-p))
+															rime-predicate-prog-in-code-p
+															rime-predicate-tex-math-or-command-p
+															rime-predicate-current-uppercase-letter-p
+															rime-predicate-ace-window-p
+															rime-predicate-after-ascii-char-p))
 	 ))
 
 (provide 'init-rime)

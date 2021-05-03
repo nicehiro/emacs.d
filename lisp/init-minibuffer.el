@@ -7,7 +7,7 @@
 		 '((top . 100)
 			 (width . 0.7)
 			 (left . 0.5))))
-	(mini-frame-mode)
+	;; (mini-frame-mode)
 	)
 
 (provide 'init-minibuffer)

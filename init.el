@@ -49,7 +49,9 @@
 	(require 'init-prog)
 	(require 'init-blog)
 	;; (require 'init-ivy)
-	(require 'init-selectrum)
+	;; (require 'init-selectrum)
+	(require 'init-completion)
+	(require 'init-consult)
 	(require 'init-git)
 	(require 'init-translate)
 	(require 'init-reading)
@@ -58,7 +60,6 @@
 	(require 'init-ledger)
 	(require 'init-languages)
 	;; mac port emacs don't support this well
-	;; (require 'init-snails)
 	(require 'init-roam)
 	(require 'init-looks)
 	(require 'init-modeline)
@@ -70,9 +71,8 @@
 	(require 'init-yas)
 	(require 'init-feed)
 	(require 'init-splash)
-	(require 'init-leetcode)
 	(require 'init-tab)
-	(require 'init-minibuffer)
+	;; (require 'init-minibuffer)
 	(require 'init-music)
 	)
 
@@ -86,17 +86,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(awesome-tab-mode t nil (awesome-tab))
  '(custom-safe-themes
-	 '("420748c74acd663379f6a04255fd7cd7c4b399511b405fb362900a86e3b26e9b" "143d68cacc9e0f9d61867422899dc2ccb1f6508c64e7ac6d2fbf1ea835609b84" "06781e3393389b135679f00531433e6a1da846b46bc4d8f3da0808db3831abec" default))
+	 '("06781e3393389b135679f00531433e6a1da846b46bc4d8f3da0808db3831abec" "143d68cacc9e0f9d61867422899dc2ccb1f6508c64e7ac6d2fbf1ea835609b84" default))
  '(debug-on-error t)
- '(mini-frame-mode t)
- '(mini-frame-show-parameters '((top . 100) (width . 0.7) (left . 0.5)))
- '(org-roam-server-mode t)
- '(package-selected-packages
-	 '(nimbus-theme consult-lsp popwin xwwp xwwp-full auto-dark-emacs highlight-80+ preview-latex mini-frame lsp-grammarly selectrum-prescnt use-package quelpa-use-package))
- '(warning-suppress-log-types '((comp)))
- '(warning-suppress-types '((comp))))
+ '(package-selected-packages '(corfu use-package quelpa-use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

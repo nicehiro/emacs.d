@@ -7,11 +7,11 @@
 (use-package org
 	:bind
 	(:map global-map
-	("C-c a" . org-agenda))
+				("C-c a" . org-agenda))
 	(:map global-map
-	("C-c l" . org-store-link))
+				("C-c l" . org-store-link))
 	(:map global-map
-	("C-c c" . org-capture))
+				("C-c c" . org-capture))
 	:hook
 	(org-mode . org-indent-mode)
 	;; (org-mode . toggle-truncate-lines)
@@ -19,6 +19,8 @@
 	(org-agenda-mode . hl-line-mode)
 	(org-mode . (lambda () (org-bullets-mode 1)))
 	(org-mode . (lambda () (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)))
+	:config
+	(setq org-src-fontify-natively t)
 	)
 
 (use-package org-gtd
