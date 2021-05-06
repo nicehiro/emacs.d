@@ -41,6 +41,9 @@
 	:config
 	(setq auto-dark-emacs/dark-theme 'chili-dark)
 	(setq auto-dark-emacs/light-theme 'chili-light)
+	;; if not support buit-in method to check current dark mode state,
+	;; use osascript instead
+	(setq auto-dark-emacs/allow-osascript t)
 	(run-with-timer 0 auto-dark-emacs/polling-interval-seconds
 									'auto-dark-emacs/check-and-set-dark-mode)
 	)
