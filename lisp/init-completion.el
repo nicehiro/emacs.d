@@ -1,7 +1,14 @@
 ;; Enable vertico
 (use-package vertico
 	:init
-	(vertico-mode))
+	(vertico-mode)
+	:config
+	(setq completion-styles '(substring orderless))
+	(advice-add #'vertico--setup :after
+							(lambda (&rest _)
+								(setq-local completion-auto-help nil
+														completion-show-inline-help nil))))
+
 
 ;; Use the `orderless' completion style.
 ;; Enable `partial-completion' for files to allow path expansion.

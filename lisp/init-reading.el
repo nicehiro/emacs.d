@@ -77,12 +77,9 @@
 	(setq nov-shr-rendering-functions
 				(append nov-shr-rendering-functions shr-external-rendering-functions)))
 
-(set-face-attribute
- 'variable-pitch nil
- :font (font-spec :name  "-*-PT Sans-bold-italic-normal-*-*-*-*-*-p-0-iso10646-1"
-									:weight 'light
-									:slant 'normal
-									:size 18.0))
+(add-hook 'text-mode-hook 'variable-pitch-mode)
+
+;; (add-hook 'text-mode-hook 'flyspell-mode)
 
 
 (provide 'init-reading)

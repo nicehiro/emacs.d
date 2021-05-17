@@ -25,7 +25,7 @@
 
 ;; (load-theme 'doom-solarized-dark)
 
-(add-to-list 'load-path "~/.emacs.d/quelpa/build/minad-chill-theme/")
+(add-to-list 'load-path "~/.emacs.d/themes/")
 (require 'chili-light-theme)
 (require 'chili-dark-theme)
 
@@ -47,6 +47,8 @@
 	(run-with-timer 0 auto-dark-emacs/polling-interval-seconds
 									'auto-dark-emacs/check-and-set-dark-mode)
 	)
+
+(use-package darkroom)
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

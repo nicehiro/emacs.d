@@ -7,13 +7,13 @@
 	(setq switch-window-shortcut-appearance 'asciiart))
 
 ;; set blur background
-(set-face-background 'default "mac:windowBackgroundColor")
-(dolist (f (face-list)) (set-face-stipple f "alpha:60%"))
-(setq face-remapping-alist (append face-remapping-alist '((default my/default-blurred))))
-(defface my/default-blurred
-	'((t :inherit 'default :stipple "alpha:60%"))
-	"Like 'default but blurred."
-	:group 'my)
+;; (set-face-background 'default "mac:windowBackgroundColor")
+;; (dolist (f (face-list)) (set-face-stipple f "alpha:60%"))
+;; (setq face-remapping-alist (append face-remapping-alist '((default my/default-blurred))))
+;; (defface my/default-blurred
+;;	'((t :inherit 'default :stipple "alpha:60%"))
+;;	"Like 'default but blurred."
+;;	:group 'my)
 
 
 ;; Set initial frame size and position

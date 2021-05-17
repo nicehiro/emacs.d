@@ -29,6 +29,8 @@
 									:weight 'normal
 									:slant 'normal
 									:size 16.0))
+(set-face-attribute 'fixed-pitch nil :font "Hack-16")
+(set-face-attribute 'variable-pitch nil :font "Courier-18")
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font
 	 (frame-parameter nil 'font)

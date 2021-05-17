@@ -71,9 +71,10 @@
 	(require 'init-yas)
 	(require 'init-feed)
 	(require 'init-splash)
-	(require 'init-tab)
+	;; (require 'init-tab)
 	;; (require 'init-minibuffer)
 	(require 'init-music)
+	(require 'init-scientific)
 	)
 
 ;; (load-theme 'elegant-emacs-light)
@@ -89,7 +90,8 @@
  '(custom-safe-themes
 	 '("06781e3393389b135679f00531433e6a1da846b46bc4d8f3da0808db3831abec" "143d68cacc9e0f9d61867422899dc2ccb1f6508c64e7ac6d2fbf1ea835609b84" default))
  '(debug-on-error t)
- '(package-selected-packages '(corfu use-package quelpa-use-package)))
+ '(package-selected-packages
+	 '(ivy-bibtex academic-phrases ebib darkroom corfu use-package quelpa-use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

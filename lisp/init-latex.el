@@ -4,7 +4,7 @@
 (setq exec-path (append '("/Library/TeX/texbin") exec-path))
 
 ;;; org mode latex export setting
-(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.8))
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.2))
 
 
 ;;; auctex support in emacs

@@ -14,6 +14,8 @@
 					("https://oremacs.com/atom.xml" oremacs)
 					;; programming languages
 					("https://sebastianraschka.com/rss_feed.xml" Sebastianraschka)
+					;; rl
+					("https://lilianweng.github.io/lil-log/feed.xml" LilianWeng)
 					;; reading
 					("http://114.55.141.180:1200/blogs/paulgraham" PaulGraham)
 					("http://114.55.141.180:1200/amazon/ku/this" KindleUnlimited)

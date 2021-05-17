@@ -61,7 +61,8 @@
 	:custom
 	(org-agenda-files `(,org-gtd-directory))
 	;; a useful view to see what can be accomplished today
-	(org-agenda-custom-commands '(("g" "Scheduled today and all NEXT items" ((agenda "" ((org-agenda-span 1))) (todo "NEXT"))))))
+	(org-agenda-custom-commands '(("g" "Scheduled today and all NEXT items"
+																 ((agenda "" ((org-agenda-span 1))) (todo "NEXT"))))))
 
 (use-package org-capture
 	:ensure nil
@@ -165,6 +166,8 @@
 																	'default)
 															:background nil t))))
 (advice-add #'load-theme :after #'+org-update-latex-preview-background-color)
+
+
 
 (provide 'init-org)
 ;;; init-org.el ends here
